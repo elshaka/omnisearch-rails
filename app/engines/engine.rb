@@ -1,6 +1,11 @@
 # app/engines/engine.rb
+
+require 'net/http'
+
 class Engine
   REDIS_TTL = 900
+
+  attr_reader :url
 
   def initialize(url)
     @url = url
@@ -30,8 +35,7 @@ class Engine
       else
         { status: :error, error_message: response.message }
       end
-    rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
-           Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
+    rescue StandardError => e
       { status: :error, error_message: e.message }
     end
   end

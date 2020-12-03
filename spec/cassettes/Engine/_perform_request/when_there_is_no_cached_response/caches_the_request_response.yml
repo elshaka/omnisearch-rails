@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://md5.jsontest.com/?text=example_text
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - md5.jsontest.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      X-Cloud-Trace-Context:
+      - d728a34111d27306e097ac589544a757
+      Date:
+      - Thu, 03 Dec 2020 17:00:32 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '80'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "original": "example_text",
+           "md5": "fa4c6baa0812e5b5c80ed8885e55a8a6"
+        }
+    http_version: null
+  recorded_at: Thu, 03 Dec 2020 17:00:32 GMT
+recorded_with: VCR 5.1.0

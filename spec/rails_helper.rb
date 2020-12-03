@@ -1,21 +1,27 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'vcr'
 
 VCR.configure do |config|
-  config.allow_http_connections_when_no_cassette = false
-  config.cassette_library_dir = File.expand_path('cassettes', __dir__)
+  config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
-  config.ignore_request { ENV['DISABLE_VCR'] }
+  config.configure_rspec_metadata!
   config.ignore_localhost = true
-  config.default_cassette_options = {
-    record: :new_episodes
-  }
+  config.default_cassette_options = { match_requests_on: [:uri] }
+end
+
+RSpec.configure do |config|
+  config.before(:each) do
+    mock_redis = MockRedis.new
+    allow(Redis).to receive(:new).and_return(mock_redis)
+  end
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

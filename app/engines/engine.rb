@@ -1,3 +1,4 @@
+# app/engines/engine.rb
 class Engine
   REDIS_TTL = 900
 
@@ -7,25 +8,31 @@ class Engine
     @store = Redis.new
   end
 
-  def get_provider_name
+  def provider_name
     raise NotImplementedError
   end
 
-  def get_results
+  def results
     raise NotImplementedError
   end
 
   def perform_request
-    cached = @store.get(@url)
-    return { status: :ok, data: JSON.parse(cached) } if cached
+    if (cached = @store.get(@url))
+      return { status: :ok, data: JSON.parse(cached) }
+    end
 
-    case response = Net::HTTP.get_response(@uri)
-    when Net::HTTPSuccess
-      @store.set(@url, response.body)
-      @store.expire(@url, REDIS_TTL)
-      return { status: :ok, data: JSON.parse(response.body) }
-    else
-      return { status: :error, error_message: response.message }
+    begin
+      case response = Net::HTTP.get_response(@uri)
+      when Net::HTTPSuccess
+        @store.set(@url, response.body)
+        @store.expire(@url, REDIS_TTL)
+        { status: :ok, data: JSON.parse(response.body) }
+      else
+        { status: :error, error_message: response.message }
+      end
+    rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
+       Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
+      { status: :error, error_message: e.message }
     end
   end
 end

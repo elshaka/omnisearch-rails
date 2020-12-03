@@ -1,32 +1,31 @@
 class Engine
   REDIS_TTL = 900
 
-  attr_reader :success
-
   def initialize(url)
     @url = url
-    @success = false
+    @uri = URI(url)
     @store = Redis.new
   end
 
-  def perform_request
-    cached = @store.get(@url)
-    if cached
-      @success = true
-      @response = JSON.parse(cached)
-    else
-      http_response = HTTParty.get(@url)
-      @success = http_response.success?
-
-      if @success
-        @store.set(@url, http_response.body)
-        @store.expire(@url, REDIS_TTL)
-        @response = http_response.parsed_response
-      end
-    end
+  def get_provider_name
+    raise NotImplementedError
   end
 
   def get_results
     raise NotImplementedError
+  end
+
+  def perform_request
+    cached = @store.get(@url)
+    return { status: :ok, data: JSON.parse(cached) } if cached
+
+    case response = Net::HTTP.get_response(@uri)
+    when Net::HTTPSuccess
+      @store.set(@url, response.body)
+      @store.expire(@url, REDIS_TTL)
+      return { status: :ok, data: JSON.parse(response.body) }
+    else
+      return { status: :error, error_message: response.message }
+    end
   end
 end

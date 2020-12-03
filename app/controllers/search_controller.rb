@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# app/controllers/search_controller.rb
 class SearchController < ApplicationController
   def index
     render json: { params: search_params }

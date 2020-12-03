@@ -31,7 +31,7 @@ class Engine
         { status: :error, error_message: response.message }
       end
     rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
-       Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
+           Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
       { status: :error, error_message: e.message }
     end
   end

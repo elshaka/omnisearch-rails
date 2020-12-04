@@ -4,11 +4,12 @@ require 'net/http'
 
 class Engine
   REDIS_TTL = 900
+  REDIS_URL = ENV['REDIS_URL']
 
   def initialize(url)
     @url = url
     @uri = URI(url)
-    @store = Redis.new
+    @store = REDIS_URL ? Redis.new(url: REDIS_URL) : Redis.new
   end
 
   def self.map_data(data)

@@ -13,12 +13,22 @@ class Engine
     @store = Redis.new
   end
 
+  def self.map_data(data)
+    raise NotImplementedError
+  end
+
   def provider_name
     raise NotImplementedError
   end
 
   def results
-    raise NotImplementedError
+    response = perform_request
+    {
+      provider: provider_name,
+      status: response[:status],
+      error_message: response[:error_message],
+      data: self.class.map_data(response[:data] || {})
+    }
   end
 
   def perform_request

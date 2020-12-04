@@ -30,6 +30,6 @@ class Search
     engines_results = engines.map(&:results)
     status = engines_results.any? { |engine_results| engine_results[:status] == :ok } ? :ok : :service_unavailable
 
-    { status: status, engines_results: engines_results }
+    { status: status, query: text, engines_results: engines_results }
   end
 end

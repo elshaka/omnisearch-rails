@@ -5,8 +5,6 @@ require 'net/http'
 class Engine
   REDIS_TTL = 900
 
-  attr_reader :url
-
   def initialize(url)
     @url = url
     @uri = URI(url)

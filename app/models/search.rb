@@ -4,7 +4,7 @@ class Search
 
   include ActiveModel::Validations
 
-  attr_accessor :engine, :text, :results
+  attr_accessor :engine, :text
 
   validates :engine, inclusion: {
     in: ENGINE_OPTIONS,

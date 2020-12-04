@@ -1,7 +1,12 @@
 # app/controllers/search_controller.rb
 class SearchController < ApplicationController
   def index
-    render json: { params: search_params }
+    search = Search.new(search_params)
+    if (results = search.results)
+      render json: results, status: results[:status]
+    else
+      render json: { errors: search.errors }, status: :unprocessable_entity
+    end
   end
 
   def search_params

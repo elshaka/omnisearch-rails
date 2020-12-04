@@ -18,6 +18,7 @@ A simple rails api application that provides search results from google and/or b
 /* search?engine=google&text=test%20query */
 {
   "status":"ok",
+  "query":"test query",
   "engines_results":[
     {
       "provider":"google",
@@ -72,7 +73,7 @@ A simple rails api application that provides search results from google and/or b
 
 ## Live version
 
-[omnisearch-api @ Heroku](https://omnisearch-elshaka.herokuapp.com)
+[omnisearch-api @ Heroku](https://omnisearch-elshaka.herokuapp.com/search?engine=google&text=test%20query)
 
 ## Installation and getting started
 

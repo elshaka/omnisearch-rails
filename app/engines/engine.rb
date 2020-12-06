@@ -16,14 +16,14 @@ class Engine
     raise NotImplementedError
   end
 
-  def provider_name
+  def self.provider_name
     raise NotImplementedError
   end
 
   def results
     response = perform_request
     {
-      provider: provider_name,
+      provider: self.class.provider_name,
       status: response[:status],
       error_message: response[:error_message],
       data: self.class.map_data(response[:data] || {})

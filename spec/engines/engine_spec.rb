@@ -14,9 +14,9 @@ describe Engine do
     end
   end
 
-  describe '#provider_name' do
+  describe '::provider_name' do
     it 'must be implemented by a subclass' do
-      expect { engine.provider_name }.to raise_error(NotImplementedError)
+      expect { Engine.provider_name }.to raise_error(NotImplementedError)
     end
   end
 
@@ -42,6 +42,18 @@ describe Engine do
         expect(Net::HTTP).not_to receive(:get_response)
         engine.perform_request
       end
+    end
+  end
+
+  describe '#results' do
+    it 'must return a proper results object' do
+      allow(engine).to receive(:perform_request).and_return({})
+      allow(Engine).to receive(:provider_name).and_return(:test_provider)
+      allow(Engine).to receive(:map_data).and_return([])
+
+      r = engine.results
+
+      expect(r.keys).to match_array([:provider, :status, :error_message, :data])
     end
   end
 end

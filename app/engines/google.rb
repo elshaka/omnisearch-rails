@@ -7,13 +7,13 @@ class Google < Engine
     super(format(BASE_URL, ENGINE_ID, API_KEY, query))
   end
 
+  def self.provider_name
+    :google
+  end
+
   def self.map_data(data)
     (data['items'] || []).map do |item|
       { title: item['title'], link: item['link'] }
     end
-  end
-
-  def provider_name
-    :google
   end
 end

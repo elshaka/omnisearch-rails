@@ -83,10 +83,14 @@ cd 'omnisearch-api'
 bundle install
 ```
 
-In order for the google search to work, you'd need to setup the environment variables GOOGLE_ENGINE_ID and GOOGLE_API_KEY with valid credentials. You could then run the server like this:
+In order for the google search to work, you'd need to setup the environment variables GOOGLE_ENGINE_ID and GOOGLE_API_KEY with valid credentials.
+
+For bing search you'd need to provide a bing suscription key using the environment variable BING_SUSCRIPTION_KEY
+
+You could then run the server like this:
 
 ```
-GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> rails s
+GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> BING_SUSCRIPTION_KEY=<YOUR BING SUSCRIPTION KEY> rails s
 ```
 
 ## Author

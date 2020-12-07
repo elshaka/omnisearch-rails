@@ -22,7 +22,7 @@ class Search
 
     engines = case engine
               when 'both'
-                [Google.new(text)]
+                [Google.new(text), Bing.new(text)]
               else
                 [engine.capitalize.constantize.new(text)]
               end

@@ -25,7 +25,7 @@ describe Engine do
       before(:each) { store.del(ENGINE_URL) }
 
       it 'performs an http get request' do
-        expect(Net::HTTP).to receive(:get_response)
+        expect_any_instance_of(Net::HTTP).to receive(:request)
         engine.perform_request
       end
 

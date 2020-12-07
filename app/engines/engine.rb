@@ -6,10 +6,11 @@ class Engine
   REDIS_TTL = 900
   REDIS_URL = ENV['REDIS_URL']
 
-  def initialize(url)
+  def initialize(url, options = {})
     @url = url
     @uri = URI(url)
     @store = REDIS_URL ? Redis.new(url: REDIS_URL) : Redis.new
+    @options = options
   end
 
   def self.map_data(data)
@@ -36,7 +37,15 @@ class Engine
     end
 
     begin
-      case response = Net::HTTP.get_response(@uri)
+      request = Net::HTTP::Get.new(@uri)
+      if (headers = @options[:headers])
+        headers.each { |key, value| request[key] = value }
+      end
+      response = Net::HTTP.start(@uri.hostname) do |http|
+        http.request(request)
+      end
+
+      case response
       when Net::HTTPSuccess
         @store.set(@url, response.body)
         @store.expire(@url, REDIS_TTL)

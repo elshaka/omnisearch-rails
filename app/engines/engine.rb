@@ -41,7 +41,7 @@ class Engine
       if (headers = @options[:headers])
         headers.each { |key, value| request[key] = value }
       end
-      response = Net::HTTP.start(@uri.hostname) do |http|
+      response = Net::HTTP.start(@uri.hostname, @uri.port, use_ssl: @uri.scheme == 'https') do |http|
         http.request(request)
       end
 

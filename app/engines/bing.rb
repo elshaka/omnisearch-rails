@@ -1,10 +1,10 @@
 class Bing < Engine
   BASE_URL = 'https://api.bing.microsoft.com/v7.0/search?q=%s'.freeze
-  SUSCRIPTION_KEY = ENV['BING_SUSCRIPTION_KEY']
+  SUBSCRIPTION_KEY = ENV['BING_SUSBCRIPTION_KEY']
 
   def initialize(query)
     super(format(BASE_URL, query), headers: {
-      'Ocp-Apim-Subscription-Key' => SUSCRIPTION_KEY
+      'Ocp-Apim-Subscription-Key' => SUBSCRIPTION_KEY
     })
   end
 

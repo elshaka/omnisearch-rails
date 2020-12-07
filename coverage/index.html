@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-12-07T09:05:28-04:00">2020-12-07T09:05:28-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-12-07T09:31:59-04:00">2020-12-07T09:31:59-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  98.15%
+  98.14%
 </span>
 
      </span>
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>20</b> files in total.
+    <b>19</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>162</b> relevant lines,
-    <span class="green"><b>159</b> lines covered</span> and
+    <b>161</b> relevant lines,
+    <span class="green"><b>158</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
-  98.15%
+  98.14%
 </span>
 )
   </div>
@@ -84,11 +84,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ba7a63d0360780be89630b84b77ca8ed78d87150" class="src_link" title="app/engines/engine.rb">app/engines/engine.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">60</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">31</td>
+            <td class="cell--number">61</td>
+            <td class="cell--number">32</td>
+            <td class="cell--number">32</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.48</td>
+            <td class="cell--number">2.47</td>
             
           </tr>
         
@@ -279,17 +279,6 @@
             
           </tr>
         
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#7d33db4f316f82fe4a35f998588f3ed7208c96a3" class="src_link" title="spec/requests/search_request_spec.rb">spec/requests/search_request_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
       </tbody>
     </table>
   </div>
@@ -362,7 +351,7 @@
 
             
 
-            <code class="ruby">  SUSCRIPTION_KEY = &#39;4702ef8d47954f428ed3330b604a16c3&#39;.freeze</code>
+            <code class="ruby">  SUBSCRIPTION_KEY = ENV[&#39;BING_SUSBCRIPTION_KEY&#39;]</code>
           </li>
         </div>
       
@@ -406,7 +395,7 @@
 
             
 
-            <code class="ruby">      &#39;Ocp-Apim-Subscription-Key&#39; =&gt; SUSCRIPTION_KEY</code>
+            <code class="ruby">      &#39;Ocp-Apim-Subscription-Key&#39; =&gt; SUBSCRIPTION_KEY</code>
           </li>
         </div>
       
@@ -494,7 +483,7 @@
 
             
 
-            <code class="ruby">  def self.map_data(data)</code>
+            <code class="ruby">  def self.map_data(_data)</code>
           </li>
         </div>
       
@@ -550,8 +539,8 @@
     
 
     <div class="t-line-summary">
-      <b>31</b> relevant lines.
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>32</b> relevant lines.
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1042,7 +1031,7 @@
 
             
 
-            <code class="ruby">      response = Net::HTTP.start(@uri.hostname) do |http|</code>
+            <code class="ruby">      response = Net::HTTP.start(@uri.hostname, @uri.port, use_ssl: @uri.scheme == &#39;https&#39;) do |http|</code>
           </li>
         </div>
       
@@ -1080,8 +1069,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="48">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="2" data-linenumber="48">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      byebug</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="49">
+            <span class="hits">2</span>
             
 
             
@@ -1091,7 +1091,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -1102,7 +1102,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
+          <li class="covered" data-hits="1" data-linenumber="51">
             <span class="hits">1</span>
             
 
@@ -1113,7 +1113,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
+          <li class="covered" data-hits="1" data-linenumber="52">
             <span class="hits">1</span>
             
 
@@ -1124,7 +1124,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="52">
+          <li class="covered" data-hits="1" data-linenumber="53">
             <span class="hits">1</span>
             
 
@@ -1135,7 +1135,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -1146,8 +1146,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="54">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
             
 
             
@@ -1157,7 +1157,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="55">
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -1168,8 +1168,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="56">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="57">
+            <span class="hits">3</span>
             
 
             
@@ -1179,24 +1179,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="57">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="58">
+            <span class="hits">3</span>
             
 
             
 
             <code class="ruby">      { status: :error, error_message: e.message }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1207,12 +1196,23 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
             
             
 
@@ -5546,103 +5546,6 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="7d33db4f316f82fe4a35f998588f3ed7208c96a3">
-  <div class="header">
-    <h3>spec/requests/search_request_spec.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="1">
-            
-            
-
-            
-
-            <code class="ruby"># frozen_string_literal: true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="2">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">require &#39;rails_helper&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">RSpec.describe &#39;Searches&#39;, type: :request do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="6">
             
             
 

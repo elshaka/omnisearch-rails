@@ -374,16 +374,17 @@
           4,
           null,
           null,
+          2,
+          2,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           3,
-          null,
-          1,
-          1,
-          1,
-          null,
-          2,
-          null,
-          2,
-          2,
+          3,
           null,
           null,
           null
@@ -500,18 +501,8 @@
           null,
           null
         ]
-      },
-      "/Users/elshaka/Projects/omnisearch-api/spec/requests/search_request_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1607346328
+    "timestamp": 1607347919
   }
 }

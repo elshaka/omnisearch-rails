@@ -10,7 +10,7 @@ A simple rails api application that provides search results from google and/or b
 
 |          Name | Required |  Type   | Description                                                                                                                                                           |
 | -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     `engine` | required | string  | Search engine(s) to be used. <br/><br/> Supported values: `google`.                                                                     |
+|     `engine` | required | string  | Search engine(s) to be used. <br/><br/> Supported values: `google, bing, both`.                                                                     |
 |     `text` | required | string  | Search query.                                                                     |
 
 **Response**

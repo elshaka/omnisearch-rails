@@ -1,6 +1,6 @@
 # app/models/search.rb
 class Search
-  ENGINE_OPTIONS = %w[google bing].freeze
+  ENGINE_OPTIONS = %w[google bing both].freeze
 
   include ActiveModel::Validations
 

@@ -93,6 +93,8 @@ You could then run the server like this:
 GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY> rails s
 ```
 
+You'd also need a redis instance running, the rails app will try to connect by default to ```localhost:6379```, you can also provide a custon redis url setting the environment variable REDIS_URL before running the rails server.
+
 ## Author
 
 👤 **Eleazar Meza**

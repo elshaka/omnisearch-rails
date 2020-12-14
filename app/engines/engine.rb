@@ -34,7 +34,7 @@ class Engine
 
   def perform_request
     if (cached = @store.get(@url))
-      return { status: :ok, data: JSON.parse(cached) }
+      return { status: :ok, data: parse_response(cached) }
     end
 
     begin
@@ -42,14 +42,19 @@ class Engine
 
       case response.code
       when 200
+        parsed_response = parse_response(response.body)
         @store.set(@url, response.body)
         @store.expire(@url, REDIS_TTL)
-        { status: :ok, data: response.parsed_response }
+        { status: :ok, data: parsed_response }
       else
         { status: :error, error_message: response.message }
       end
     rescue HTTParty::Error => e
       { status: :error, error_message: e.message }
     end
+  end
+
+  def parse_response(response_body)
+    @options[:html] ? Nokogiri::HTML(response_body) : JSON.parse(response_body)
   end
 end

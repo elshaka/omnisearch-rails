@@ -4,12 +4,13 @@ require 'net/http'
 
 class Engine
   REDIS_TTL = 900
-  REDIS_URL = ENV['REDIS_URL']
 
   def initialize(url, options = {})
+    redis_url = Rails.configuration.redis['url']
+
     @url = url
     @uri = URI(url)
-    @store = REDIS_URL ? Redis.new(url: REDIS_URL) : Redis.new
+    @store = redis_url ? Redis.new(url: redis_url) : Redis.new
     @options = options
   end
 

@@ -30,5 +30,8 @@ module OmnisearchApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.services_credentials = config_for(:services_credentials)
+    config.redis = config_for(:redis)
   end
 end

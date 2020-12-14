@@ -37,23 +37,17 @@ class Engine
     end
 
     begin
-      request = Net::HTTP::Get.new(@uri)
-      if (headers = @options[:headers])
-        headers.each { |key, value| request[key] = value }
-      end
-      response = Net::HTTP.start(@uri.hostname, @uri.port, use_ssl: @uri.scheme == 'https') do |http|
-        http.request(request)
-      end
+      response = HTTParty.get(@url, headers: @options[:headers])
 
-      case response
-      when Net::HTTPSuccess
+      case response.code
+      when 200
         @store.set(@url, response.body)
         @store.expire(@url, REDIS_TTL)
-        { status: :ok, data: JSON.parse(response.body) }
+        { status: :ok, data: response.parsed_response }
       else
         { status: :error, error_message: response.message }
       end
-    rescue StandardError => e
+    rescue HTTParty::Error => e
       { status: :error, error_message: e.message }
     end
   end

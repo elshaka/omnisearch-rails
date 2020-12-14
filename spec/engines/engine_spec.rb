@@ -24,6 +24,11 @@ describe Engine do
     context 'when there is no cached response' do
       before(:each) { store.del(ENGINE_URL) }
 
+      before do
+        response = instance_double('Net::HTTPResponse', body: "{}", code: 200, method_missing: nil)
+        allow_any_instance_of(Net::HTTP).to receive(:request).and_return(response)
+      end
+
       it 'performs an http get request' do
         expect_any_instance_of(Net::HTTP).to receive(:request)
         engine.perform_request

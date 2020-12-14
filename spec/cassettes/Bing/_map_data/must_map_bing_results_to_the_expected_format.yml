@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.bing.microsoft.com/v7.0/search?q=test
+    uri: https://api.bing.microsoft.com/v7.0/search?q=test
     body:
       encoding: US-ASCII
       string: ''
@@ -13,30 +13,20 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
-      Host:
-      - api.bing.microsoft.com
-      Ocp-Apim-Subscription-Key:
-      - 4702ef8d47954f428ed3330b604a16c3
   response:
     status:
-      code: 404
-      message: Resource Not Found
+      code: 401
+      message: PermissionDenied
     headers:
       Content-Length:
-      - '56'
-      Content-Type:
-      - application/json
-      Apim-Request-Id:
-      - 73095412-bf49-4774-91f2-1139802fb57c
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
+      - '224'
       Date:
-      - Mon, 07 Dec 2020 07:08:59 GMT
+      - Mon, 14 Dec 2020 11:49:21 GMT
     body:
       encoding: UTF-8
-      string: '{"error":{"code":"404","message": "Resource not found"}}'
+      string: '{"error":{"code":"401","message":"Access denied due to invalid subscription
+        key or wrong API endpoint. Make sure to provide a valid key for an active
+        subscription and use a correct regional API endpoint for your resource."}}'
     http_version: null
-  recorded_at: Mon, 07 Dec 2020 07:09:00 GMT
+  recorded_at: Mon, 14 Dec 2020 11:49:21 GMT
 recorded_with: VCR 5.1.0

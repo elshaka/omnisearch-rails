@@ -156,11 +156,13 @@ You'd also need a redis instance running, the rails app will try to connect by d
 
 ## Testing
 
+To run the test suite simply run rspec
+
 ```
 GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY> bundle exec rspec
 ```
 
-VCR is used to record the test suite HTTP interactions but you still need to provide the relevant credentials as environment variables to make use of the proper cassettes.
+Note: While VCR is used to record the test suite HTTP interactions, you still need to provide the relevant credentials as environment variables to make use of the proper cassettes.
 
 ## Author
 

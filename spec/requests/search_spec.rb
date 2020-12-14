@@ -30,7 +30,7 @@ RSpec.describe 'Search', type: :request do
       end
 
       it 'returns the expected keys in the response' do
-        expect(@json_response.keys).to match_array([:status, :query, :engines_results])
+        expect(@json_response.keys).to match_array([:status, :status_by_provider, :results])
       end
     end
   end

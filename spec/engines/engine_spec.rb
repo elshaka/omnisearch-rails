@@ -49,16 +49,4 @@ describe Engine do
       end
     end
   end
-
-  describe '#results' do
-    it 'must return a proper results object' do
-      allow(engine).to receive(:perform_request).and_return({})
-      allow(Engine).to receive(:provider_name).and_return(:test_provider)
-      allow(Engine).to receive(:map_data).and_return([])
-
-      r = engine.results
-
-      expect(r.keys).to match_array([:provider, :status, :error_message, :data])
-    end
-  end
 end

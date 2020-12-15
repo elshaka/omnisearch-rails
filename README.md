@@ -17,6 +17,7 @@ A simple rails api application that provides search results from google and/or b
 ```json
 /* search?engine=both&text=elshaka */
 {
+  "query": "elshaka",
   "status": "ok",
   "status_by_provider": [
     {
@@ -58,8 +59,8 @@ A simple rails api application that provides search results from google and/or b
     },
     {
       "provider": "bing",
-      "title": "Sergio Vega - Wikipedia, la enciclopedia libre",
-      "link": "https://es.wikipedia.org/wiki/Sergio_Vega"
+      "title": "El shaka: qué significa esta señal y dónde se originó",
+      "link": "https://www.eluniversal.com.mx/destinos/el-shaka-que-significa-esta-senal-y-donde-se-origino"
     },
     {
       "provider": "google",
@@ -68,8 +69,8 @@ A simple rails api application that provides search results from google and/or b
     },
     {
       "provider": "bing",
-      "title": "EL SHAKA - Sergio Vega - LETRAS.COM",
-      "link": "https://www.letras.com/sergio-vega/1394014/"
+      "title": "El Shaka (letra y canción) - El Halcon de la sierra ...",
+      "link": "https://www.musica.com/letras.asp?letra=1093055"
     },
     {
       "provider": "google",
@@ -78,8 +79,8 @@ A simple rails api application that provides search results from google and/or b
     },
     {
       "provider": "bing",
-      "title": "El Shaka (letra y canción) - Sergio Vega | Musica.com",
-      "link": "https://www.musica.com/letras.asp?letra=1400579"
+      "title": "Un saludo surfero: El Shaka | Surfeando un charco",
+      "link": "https://surfeandouncharco.com/saludo-surfero/"
     },
     {
       "provider": "google",
@@ -88,8 +89,8 @@ A simple rails api application that provides search results from google and/or b
     },
     {
       "provider": "bing",
-      "title": "Sergio Vega - El Shaka - Perfil Artístico y Personal",
-      "link": "https://www.buenamusica.com/sergio-vega"
+      "title": "Sergio Vega - Wikipedia, la enciclopedia libre",
+      "link": "https://es.wikipedia.org/wiki/Sergio_Vega"
     },
     {
       "provider": "google",
@@ -98,8 +99,8 @@ A simple rails api application that provides search results from google and/or b
     },
     {
       "provider": "bing",
-      "title": "Un saludo surfero: El Shaka | Surfeando un charco",
-      "link": "https://surfeandouncharco.com/saludo-surfero/"
+      "title": "El Shaka (2012) Online - Película Completa en Español ...",
+      "link": "https://www.fulltv.com.ar/peliculas/el-shaka-2012.html"
     },
     {
       "provider": "google",
@@ -107,14 +108,14 @@ A simple rails api application that provides search results from google and/or b
       "link": "https://www.wsj.com/articles/BL-SEB-39394"
     },
     {
-      "provider": "google",
-      "title": "Bank Alrahaman Awad Elshaka | Facebook",
-      "link": "https://www.facebook.com/bankalrahamanawad.elshaka/photos"
-    },
-    {
       "provider": "bing",
       "title": "Shaka - Wikipedia, la enciclopedia libre",
       "link": "https://es.wikipedia.org/wiki/Shaka"
+    },
+    {
+      "provider": "google",
+      "title": "Bank Alrahaman Awad Elshaka | Facebook",
+      "link": "https://www.facebook.com/bankalrahamanawad.elshaka/photos"
     },
     {
       "provider": "google",

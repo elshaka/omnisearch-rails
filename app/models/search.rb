@@ -27,14 +27,15 @@ class Search
                         ["#{engine.capitalize}Search".constantize.call(text)]
                       end
 
-    self.class.agreggate_responses(responses)
+    agreggate_responses(responses)
   end
 
-  def self.agreggate_responses(responses)
+  def agreggate_responses(responses)
     {
-      status: aggregate_statuses(responses),
-      results: aggregate_results(responses),
-      status_by_provider: status_by_provider(responses),
+      query: text,
+      status: self.class.aggregate_statuses(responses),
+      status_by_provider: self.class.status_by_provider(responses),
+      results: self.class.aggregate_results(responses),
     }
   end
 

@@ -164,6 +164,13 @@ GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> BI
 
 Note: While VCR is used to record the test suite HTTP interactions, you still need to provide the relevant credentials as environment variables to make use of the proper cassettes.
 
+## Technologies used
+
+- Rails
+- HTTParty
+- Redis
+- Rspec (+ vcr, mock-redis)
+
 ## Author
 
 👤 **Eleazar Meza**

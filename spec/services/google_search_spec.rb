@@ -2,18 +2,18 @@
 
 require 'rails_helper'
 
-describe Bing do
-  let(:bing) { Bing.new('test') }
+describe GoogleSearch do
+  let(:results) { GoogleSearch.call('test') }
 
   describe '::provider_name' do
     it 'must return search provider name as a symbol' do
-      expect(Bing.provider_name.class).to be Symbol
+      expect(GoogleSearch.provider_name.class).to be Symbol
     end
   end
 
   describe '::map_data', :vcr do
-    it 'must map bing results to the expected format' do
-      data = bing.results[:data]
+    it 'must map google results to the expected format' do
+      data = results[:data]
       data.each do |d|
         expect(d.keys).to match_array([:title, :link])
       end

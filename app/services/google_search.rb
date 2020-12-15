@@ -1,4 +1,4 @@
-class Google < Engine
+class GoogleSearch < SearchService
   BASE_URL = 'https://customsearch.googleapis.com/customsearch/v1?cx=%s&key=%s&q=%s'.freeze
 
   def initialize(query)

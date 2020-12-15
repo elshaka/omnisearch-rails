@@ -1,8 +1,6 @@
-# app/engines/engine.rb
+# app/services/search_service.rb
 
-require 'net/http'
-
-class Engine
+class SearchService
   REDIS_TTL = 900
 
   def initialize(url, options = {})
@@ -22,7 +20,11 @@ class Engine
     raise NotImplementedError
   end
 
-  def results
+  def self.call(*args, &block)
+    new(*args, &block).call
+  end
+
+  def call
     response = perform_request
     {
       provider: self.class.provider_name,

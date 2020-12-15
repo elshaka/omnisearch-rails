@@ -1,4 +1,4 @@
-class Bing < Engine
+class BingSearch < SearchService
   BASE_URL = 'https://www.bing.com/search?q=%s'.freeze
 
   def initialize(query)
@@ -21,7 +21,7 @@ class Bing < Engine
   end
 end
 
-# class Bing < Engine
+# class BingSearch < SearchService
 #   BASE_URL = 'https://api.bing.microsoft.com/v7.0/search?q=%s'.freeze
 #
 #   def initialize(query)

@@ -4,23 +4,27 @@ require 'rails_helper'
 
 ENGINE_URL = 'http://md5.jsontest.com/?text=example_text'
 
-describe Engine do
-  let(:engine) { Engine.new(ENGINE_URL) }
+describe SearchService do
   let(:store) { Redis.new }
 
   describe '::map_data' do
     it 'must be implemented by a subclass' do
-      expect { Engine.map_data({}) }.to raise_error(NotImplementedError)
+      expect { SearchService.map_data({}) }.to raise_error(NotImplementedError)
     end
   end
 
   describe '::provider_name' do
     it 'must be implemented by a subclass' do
-      expect { Engine.provider_name }.to raise_error(NotImplementedError)
+      expect { SearchService.provider_name }.to raise_error(NotImplementedError)
     end
   end
 
   describe '#perform_request', :vcr do
+    before(:each) do
+      allow(SearchService).to receive(:map_data).and_return([])
+      allow(SearchService).to receive(:provider_name).and_return(:test)
+    end
+
     context 'when there is no cached response' do
       before(:each) { store.del(ENGINE_URL) }
 
@@ -31,11 +35,11 @@ describe Engine do
 
       it 'performs an http get request' do
         expect_any_instance_of(Net::HTTP).to receive(:request)
-        engine.perform_request
+        SearchService.call(ENGINE_URL)
       end
 
       it 'caches the request response' do
-        engine.perform_request
+        SearchService.call(ENGINE_URL)
         expect(store.get(ENGINE_URL)).not_to be_nil
       end
     end
@@ -45,7 +49,7 @@ describe Engine do
 
       it 'does not perform an http get request' do
         expect(Net::HTTP).not_to receive(:get_response)
-        engine.perform_request
+        SearchService.call(ENGINE_URL)
       end
     end
   end

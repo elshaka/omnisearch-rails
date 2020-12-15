@@ -21,3 +21,6 @@
 
 # Redis dump
 dump.rdb
+
+# MacOS
+.DS_Store

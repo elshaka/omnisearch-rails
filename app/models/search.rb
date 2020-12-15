@@ -21,11 +21,11 @@ class Search
     return nil unless valid?
 
     engines_results = case engine
-              when 'both'
-                [GoogleSearch.call(text), BingSearch.call(text)]
-              else
-                ["#{engine.capitalize}Search".constantize.call(text)]
-              end
+                      when 'both'
+                        [GoogleSearch.call(text), BingSearch.call(text)]
+                      else
+                        ["#{engine.capitalize}Search".constantize.call(text)]
+                      end
 
     self.class.agreggate_engines_results(engines_results)
   end
@@ -53,7 +53,7 @@ class Search
   end
 
   def self.aggregate_engines_results(engines_results)
-    engines_results.map do |engine_results|
+    head, *tail = engines_results.map do |engine_results|
       engine_results[:data].map do |results|
         {
           provider: engine_results[:provider],
@@ -61,6 +61,8 @@ class Search
           link: results[:link]
         }
       end
-    end.flatten.uniq { |result| result[:link] }
+    end
+
+    tail.reduce(head) { |s, i| s.zip i }.flatten.compact.uniq { |result| result[:link] }
   end
 end

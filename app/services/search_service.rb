@@ -20,6 +20,10 @@ class SearchService
     raise NotImplementedError
   end
 
+  def self.parse_response(response_body)
+    raise NotImplementedError
+  end
+
   def self.call(*args, &block)
     new(*args, &block).call
   end
@@ -36,7 +40,7 @@ class SearchService
 
   def perform_request
     if (cached = @store.get(@url))
-      return { status: :ok, data: parse_response(cached) }
+      return { status: :ok, data: self.class.parse_response(cached) }
     end
 
     begin
@@ -44,7 +48,7 @@ class SearchService
 
       case response.code
       when 200
-        parsed_response = parse_response(response.body)
+        parsed_response = self.class.parse_response(response.body)
         @store.set(@url, response.body)
         @store.expire(@url, REDIS_TTL)
         { status: :ok, data: parsed_response }
@@ -54,9 +58,5 @@ class SearchService
     rescue HTTParty::Error => e
       { status: :error, error_message: e.message }
     end
-  end
-
-  def parse_response(response_body)
-    @options[:html] ? Nokogiri::HTML(response_body) : JSON.parse(response_body)
   end
 end

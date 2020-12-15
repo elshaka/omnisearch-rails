@@ -11,6 +11,10 @@ class GoogleSearch < SearchService
     :google
   end
 
+  def self.parse_response(response_body)
+    JSON.parse(response_body)
+  end
+
   def self.map_data(data)
     (data['items'] || []).map do |item|
       { title: item['title'], link: item['link'] }

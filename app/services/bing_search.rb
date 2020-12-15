@@ -3,12 +3,15 @@ class BingSearch < SearchService
 
   def initialize(query)
     user_agent = Rails.configuration.services_credentials['bing']['user_agent']
-    super(format(BASE_URL, query), html: true,
-                                   headers: { 'User-Agent': user_agent })
+    super(format(BASE_URL, query), headers: { 'User-Agent': user_agent })
   end
 
   def self.provider_name
     :bing
+  end
+
+  def self.parse_response(response_body)
+    Nokogiri::HTML(response_body)
   end
 
   def self.map_data(data)

@@ -19,10 +19,17 @@ describe SearchService do
     end
   end
 
+  describe '::parse_response' do
+    it 'must be implemented by a subclass' do
+      expect { SearchService.parse_response('') }.to raise_error(NotImplementedError)
+    end
+  end
+
   describe '#perform_request', :vcr do
     before(:each) do
-      allow(SearchService).to receive(:map_data).and_return([])
       allow(SearchService).to receive(:provider_name).and_return(:test)
+      allow(SearchService).to receive(:parse_response).and_return({})
+      allow(SearchService).to receive(:map_data).and_return([])
     end
 
     context 'when there is no cached response' do

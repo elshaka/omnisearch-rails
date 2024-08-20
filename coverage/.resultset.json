@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/elshaka/Projects/omnisearch-api/spec/models/search_spec.rb": {
+      "/home/claritarivas/omnisearch-rails/spec/models/search_spec.rb": {
         "lines": [
           1,
           null,
@@ -48,7 +48,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/spec/rails_helper.rb": {
+      "/home/claritarivas/omnisearch-rails/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/environment.rb": {
+      "/home/claritarivas/omnisearch-rails/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -126,7 +126,7 @@
           1
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/application.rb": {
+      "/home/claritarivas/omnisearch-rails/config/application.rb": {
         "lines": [
           null,
           null,
@@ -167,14 +167,14 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/boot.rb": {
+      "/home/claritarivas/omnisearch-rails/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/environments/test.rb": {
+      "/home/claritarivas/omnisearch-rails/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -222,7 +222,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/application_controller_renderer.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -234,7 +234,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/backtrace_silencers.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -245,7 +245,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/cors.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/cors.rb": {
         "lines": [
           null,
           null,
@@ -265,7 +265,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/filter_parameter_logging.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -273,7 +273,7 @@
           1
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/inflections.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -293,7 +293,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/mime_types.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -301,12 +301,12 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/service_credentials.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/service_credentials.rb": {
         "lines": [
 
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/initializers/wrap_parameters.rb": {
+      "/home/claritarivas/omnisearch-rails/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -324,7 +324,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/config/routes.rb": {
+      "/home/claritarivas/omnisearch-rails/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -334,7 +334,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/app/models/search.rb": {
+      "/home/claritarivas/omnisearch-rails/app/models/search.rb": {
         "lines": [
           null,
           1,
@@ -407,7 +407,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/spec/requests/search_spec.rb": {
+      "/home/claritarivas/omnisearch-rails/spec/requests/search_spec.rb": {
         "lines": [
           1,
           null,
@@ -448,7 +448,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/spec/services/bing_search_spec.rb": {
+      "/home/claritarivas/omnisearch-rails/spec/services/bing_search_spec.rb": {
         "lines": [
           null,
           null,
@@ -474,7 +474,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/app/services/bing_search.rb": {
+      "/home/claritarivas/omnisearch-rails/app/services/bing_search.rb": {
         "lines": [
           1,
           1,
@@ -522,7 +522,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/app/services/search_service.rb": {
+      "/home/claritarivas/omnisearch-rails/app/services/search_service.rb": {
         "lines": [
           null,
           null,
@@ -566,29 +566,29 @@
           null,
           1,
           9,
-          2,
+          3,
           null,
           null,
           null,
-          7,
+          6,
           null,
-          7,
+          6,
           null,
-          4,
-          4,
-          4,
-          4,
+          3,
+          3,
+          3,
+          3,
           null,
           3,
           null,
-          0,
+          null,
           0,
           null,
           null,
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/spec/services/google_search_spec.rb": {
+      "/home/claritarivas/omnisearch-rails/spec/services/google_search_spec.rb": {
         "lines": [
           null,
           null,
@@ -614,7 +614,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/app/services/google_search.rb": {
+      "/home/claritarivas/omnisearch-rails/app/services/google_search.rb": {
         "lines": [
           1,
           1,
@@ -641,7 +641,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/spec/services/search_service_spec.rb": {
+      "/home/claritarivas/omnisearch-rails/spec/services/search_service_spec.rb": {
         "lines": [
           null,
           null,
@@ -708,7 +708,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/app/controllers/search_controller.rb": {
+      "/home/claritarivas/omnisearch-rails/app/controllers/search_controller.rb": {
         "lines": [
           null,
           1,
@@ -727,7 +727,7 @@
           null
         ]
       },
-      "/Users/elshaka/Projects/omnisearch-api/app/controllers/application_controller.rb": {
+      "/home/claritarivas/omnisearch-rails/app/controllers/application_controller.rb": {
         "lines": [
           null,
           1,
@@ -735,6 +735,6 @@
         ]
       }
     },
-    "timestamp": 1608661408
+    "timestamp": 1724183448
   }
 }

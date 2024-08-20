@@ -1,4 +1,4 @@
-ruby '2.6.5'
+ruby '3.3.4'
 
 source 'https://rubygems.org'
 
@@ -52,3 +52,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "base64", "~> 0.2.0"
+gem "bigdecimal", "~> 3.1"
+
+gem "mutex_m", "~> 0.2.0"
+gem "drb", "~> 2.2"

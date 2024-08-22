@@ -29,9 +29,7 @@ describe Search, type: :model do
 
   describe '#results' do
     before(:all) do
-      VCR.use_cassette("get_search") do
-        @results = Search.new(engine: 'both', text: 'test').results
-      end
+      @results = Search.new(engine: 'both', text: 'test').results
     end
 
     it 'agreggates results into a single array with the expected keys' do

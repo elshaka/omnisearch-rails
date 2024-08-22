@@ -1,4 +1,4 @@
-# omnisearch-api
+# omnisearch-rails
 
 A simple rails api application that provides search results from google and/or bing
 
@@ -133,8 +133,8 @@ A simple rails api application that provides search results from google and/or b
 ## Installation and getting started
 
 ```
-git clone https://github.com/elshaka/omnisearch-api
-cd 'omnisearch-api'
+git clone https://github.com/elshaka/omnisearch-rails
+cd 'omnisearch-rails'
 bundle install
 ```
 
@@ -142,30 +142,30 @@ In order for the google search to work, you'd need to setup the environment vari
 
 For bing search you'd need to provide a bing subscription key using the environment variable BING_SUBSCRIPTION_KEY
 
+You'd also need a redis instance running, the rails app will try to connect by default to ```localhost:6379```, you can also provide a custon redis url setting the environment variable REDIS_URL before running the rails server.
+
+Environment variables are set in a .env file (you can use the .env.sample as a template to create your own).
+
 You could then run the server like this:
 
 ```
-GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY> rails s
+bundle exec rails s
 ```
-
-You'd also need a redis instance running, the rails app will try to connect by default to ```localhost:6379```, you can also provide a custon redis url setting the environment variable REDIS_URL before running the rails server.
 
 ## Testing
 
 To run the test suite simply run rspec
 
 ```
-GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> GOOGLE_API_KEY=<YOUR GOOGLE API KEY> BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY> bundle exec rspec
+bundle exec rspec
 ```
-
-Note: While VCR is used to record the test suite HTTP interactions, you still need to provide the relevant credentials as environment variables to make use of the proper cassettes.
 
 ## Technologies used
 
 - Rails
 - HTTParty
 - Redis
-- Rspec (+ vcr, mock-redis)
+- Rspec (+ mock-redis)
 
 ## Author
 

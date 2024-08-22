@@ -19,10 +19,8 @@ RSpec.describe 'Search', type: :request do
 
     context 'with valid search parameters' do
       before :all do
-        VCR.use_cassette("get_search") do
-          get search_path(engine: 'both', text: 'test')
-          @json_response = JSON.parse(response.body, symbolize_names: true)
-        end
+        get search_path(engine: 'both', text: 'test')
+        @json_response = JSON.parse(response.body, symbolize_names: true)
       end
 
       it 'responds with a 200 status' do

@@ -11,7 +11,7 @@ describe BingSearch do
     end
   end
 
-  describe '::map_data', :vcr do
+  describe '::map_data' do
     it 'must map bing results to the expected format' do
       data = results[:data]
       data.each do |d|

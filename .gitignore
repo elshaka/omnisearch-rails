@@ -24,3 +24,6 @@ dump.rdb
 
 # MacOS
 .DS_Store
+
+# dotenv
+.env

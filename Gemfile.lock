@@ -75,6 +75,10 @@ GEM
     date (3.3.4)
     diff-lcs (1.5.1)
     docile (1.4.1)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
     ffi (1.17.0)
@@ -167,7 +171,7 @@ GEM
       rspec-mocks (~> 3.13.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.1)
+    rspec-expectations (3.13.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-mocks (3.13.1)
@@ -204,7 +208,8 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    vcr (6.2.0)
+    vcr (6.3.1)
+      base64
     webmock (3.23.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -221,6 +226,7 @@ DEPENDENCIES
   base64 (~> 0.2.0)
   bigdecimal (~> 3.1)
   byebug
+  dotenv-rails
   drb (~> 2.2)
   httparty
   listen (>= 3.0.5, < 3.2)

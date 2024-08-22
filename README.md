@@ -1,4 +1,4 @@
-# omnisearch-api
+# omnisearch-rails
 
 A simple rails api application that provides search results from google and/or bing
 
@@ -133,8 +133,8 @@ A simple rails api application that provides search results from google and/or b
 ## Installation and getting started
 
 ```
-git clone https://github.com/elshaka/omnisearch-api
-cd 'omnisearch-api'
+git clone https://github.com/elshaka/omnisearch-rails
+cd 'omnisearch-rails'
 bundle install
 ```
 
@@ -160,14 +160,12 @@ To run the test suite simply run rspec
 bundle exec rspec
 ```
 
-Note: While VCR is used to record the test suite HTTP interactions, you still need to provide the relevant credentials as environment variables to make use of the proper cassettes.
-
 ## Technologies used
 
 - Rails
 - HTTParty
 - Redis
-- Rspec (+ vcr, mock-redis)
+- Rspec (+ mock-redis)
 
 ## Author
 

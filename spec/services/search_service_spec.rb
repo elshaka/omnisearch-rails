@@ -25,7 +25,7 @@ describe SearchService do
     end
   end
 
-  describe '#perform_request', :vcr do
+  describe '#perform_request' do
     before(:each) do
       allow(SearchService).to receive(:provider_name).and_return(:test)
       allow(SearchService).to receive(:parse_response).and_return({})

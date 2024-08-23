@@ -54,3 +54,5 @@ gem "bigdecimal", "~> 3.1"
 
 gem "mutex_m", "~> 0.2.0"
 gem "drb", "~> 2.2"
+
+gem 'rubocop', require: false

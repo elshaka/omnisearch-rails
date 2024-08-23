@@ -8,7 +8,7 @@ class Search
 
   validates :engine, inclusion: {
     in: ENGINE_OPTIONS,
-    message: "%{value} is not a valid engine option. Valid engine options: #{ENGINE_OPTIONS}"
+    message: "%<value>s is not a valid engine option. Valid engine options: #{ENGINE_OPTIONS}"
   }
   validates :text, presence: true
 
@@ -21,11 +21,11 @@ class Search
     return nil unless valid?
 
     responses = case engine
-                      when 'both'
-                        [GoogleSearch.call(text), BingSearch.call(text)]
-                      else
-                        ["#{engine.capitalize}Search".constantize.call(text)]
-                      end
+                when 'both'
+                  [GoogleSearch.call(text), BingSearch.call(text)]
+                else
+                  ["#{engine.capitalize}Search".constantize.call(text)]
+                end
 
     agreggate_responses(responses)
   end
@@ -35,7 +35,7 @@ class Search
       query: text,
       status: self.class.aggregate_statuses(responses),
       status_by_provider: self.class.status_by_provider(responses),
-      results: self.class.aggregate_results(responses),
+      results: self.class.aggregate_results(responses)
     }
   end
 

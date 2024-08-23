@@ -4,7 +4,7 @@ class SearchService
   REDIS_TTL = 900
 
   def initialize(url, options = {})
-    redis_url = Rails.configuration.redis['url']
+    redis_url = Rails.application.config_for(:redis)['url']
 
     @url = url
     @uri = URI(url)

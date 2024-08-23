@@ -1,0 +1,1 @@
+Rails.application.config_for(:redis)

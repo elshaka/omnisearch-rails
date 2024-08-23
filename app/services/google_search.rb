@@ -2,8 +2,8 @@ class GoogleSearch < SearchService
   BASE_URL = 'https://customsearch.googleapis.com/customsearch/v1?cx=%s&key=%s&q=%s'.freeze
 
   def initialize(query)
-    engine_id = Rails.configuration.services_credentials[:google][:engine_id]
-    api_key = Rails.configuration.services_credentials[:google][:api_key]
+    engine_id = Rails.application.config_for(:services_credentials)[:google][:engine_id]
+    api_key = Rails.application.config_for(:services_credentials)[:google][:api_key]
     super(format(BASE_URL, engine_id, api_key, query))
   end
 

@@ -2,7 +2,7 @@ class BingSearch < SearchService
   BASE_URL = 'https://www.bing.com/search?q=%s'.freeze
 
   def initialize(query)
-    user_agent = Rails.configuration.services_credentials[:bing][:user_agent]
+    user_agent = Rails.application.config_for(:services_credentials)[:bing][:user_agent]
     super(format(BASE_URL, query), headers: { 'User-Agent': user_agent })
   end
 

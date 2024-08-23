@@ -1,0 +1,1 @@
+Rails.application.config_for(:services_credentials)

@@ -9,7 +9,7 @@ RSpec.describe 'Search', type: :request do
       end
 
       it 'responds with a 422 status' do
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
 
       it 'includes an errors key in the response' do

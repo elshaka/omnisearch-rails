@@ -13,9 +13,12 @@ A simple rails api application that provides search results from google and/or b
 |     `engine` | required | string  | Search engine(s) to be used. <br/><br/> Supported values: `google, bing, both`.                                                                     |
 |     `text` | required | string  | Search query.                                                                     |
 
+**Sample request**
+
+```http://localhost:3000/search?engine=both&text=elshaka```
+
 **Response**
 ```json
-/* search?engine=both&text=elshaka */
 {
   "query": "elshaka",
   "status": "ok",
@@ -160,12 +163,34 @@ To run the test suite simply run rspec
 bundle exec rspec
 ```
 
+## Docker image
+
+You can build a docker image of the project by simply running:
+
+```
+docker build . -t omnisearch-rails
+```
+
+Then a simple way to run a container with it could be:
+
+
+```
+docker run --network host \
+--env GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> \
+--env GOOGLE_API_KEY=<YOUR GOOGLE API KEY> \
+--env BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY>
+omnisearch-rails
+```
+
+The server should be available at ```localhost:3000``` just as if you would be running it locally.
+
 ## Technologies used
 
 - Rails
 - HTTParty
 - Redis
 - Rspec (+ mock-redis)
+- Docker
 
 ## Author
 

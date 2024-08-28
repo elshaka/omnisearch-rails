@@ -42,6 +42,7 @@ end
 
 group :test do
   gem 'simplecov', require: false
+  gem 'simplecov-json', require: false
   gem 'webmock'
   gem 'mock_redis'
 end

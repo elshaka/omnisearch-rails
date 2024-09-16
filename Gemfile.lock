@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:elshaka/omnisearch-rails-engine.git
+  revision: 967c12066ff238e5f0c0a0d9fd43c7b2f8769917
+  specs:
+    omnisearch-rails-engine (0.1.0)
+      rails (>= 7.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -247,6 +254,7 @@ DEPENDENCIES
   httparty
   mock_redis
   mutex_m (~> 0.2.0)
+  omnisearch-rails-engine!
   puma (~> 3.7)
   rails (~> 7.2.0)
   redis (~> 4.2.5)

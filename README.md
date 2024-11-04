@@ -178,7 +178,7 @@ Then a simple way to run a container with it could be:
 docker run --network host \
 --env GOOGLE_ENGINE_ID=<YOUR GOOGLE ENGINE ID> \
 --env GOOGLE_API_KEY=<YOUR GOOGLE API KEY> \
---env BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY>
+--env BING_SUBSCRIPTION_KEY=<YOUR BING SUBSCRIPTION KEY> \
 omnisearch-rails
 ```
 
